@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestreplaceAntiSyakaiseiWords(t *testing.T) {
+func TestReplaceAntiSyakaiseiWords(t *testing.T) {
 	assertSyakai := func(baseText, expectedText string) {
 		text := replaceAntiSyakaiseiWords(baseText)
 		if text != expectedText {
@@ -14,4 +14,9 @@ func TestreplaceAntiSyakaiseiWords(t *testing.T) {
 
 	assertSyakai("うるせえ黙れ", "承知いたしました")
 	assertSyakai("うるせえだまれ", "承知いたしました")
+	assertSyakai("モチベーションが完全に無くなった", "テンションMAX！")
+	assertSyakai("モチベーション完全に無くなった", "テンションMAX！")
+	assertSyakai("モチベーションが無くなった", "テンションMAX！")
+	assertSyakai("モチベーションが完全に消えた", "テンションMAX！")
+	assertSyakai("モチベーション消えた", "テンションMAX！")		
 }
