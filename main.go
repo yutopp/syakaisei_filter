@@ -18,7 +18,7 @@ func main() {
 
 var replaceTable = map[*regexp.Regexp]string{
 	regexp.MustCompile("うるせえ(黙れ|だまれ)"): "承知いたしました",
-	regexp.MustCompile("モチベーション(が)?(完全に)?(無くなっ|消え)た"): "テンションMAX！",
+	regexp.MustCompile("(モチベーション|やる気)(が)?(完全に)?(無くなっ|消え)た"): "テンションMAX！",
 }
 
 func replaceAntiSyakaiseiWords(s string) string {
